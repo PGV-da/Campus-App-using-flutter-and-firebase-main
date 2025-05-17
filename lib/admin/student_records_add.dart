@@ -277,10 +277,10 @@ class _StudentRecordAddState extends State<StudentRecordAdd> {
                                   var ex = Excel.decodeBytes(file.readAsBytesSync().toList());
                                   if (ex.tables.isNotEmpty) {
                                     String sheet = ex.tables.keys.single;
-                                    if (ex.tables[sheet]!.maxCols == 9) {
+                                    if (ex.tables[sheet]!.maxRows == 9) {
                                       for (var row in ex.tables[sheet]!.rows) {
                                         if (count == 0) {
-                                          for (int i = 0; i < ex.tables[sheet]!.maxCols; i++) {
+                                          for (int i = 0; i < ex.tables[sheet]!.maxRows; i++) {
                                             if (RegExp('.*roll.*', caseSensitive: false).hasMatch(row[i]!.value.toString())) {
                                               m['Roll_No'] = i;
                                             } else if (RegExp('.*prn.*', caseSensitive: false).hasMatch(row[i]!.value.toString())) {

@@ -2,5 +2,25 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "campus-balaji",
+          "appId": "1:523557736355:android:bfe29681742d44da2f5416",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "campus-balaji",
+          "configurations": {
+            "android": "1:523557736355:android:bfe29681742d44da2f5416",
+            "ios": "1:523557736355:ios:ff687cabaabe96072f5416"
+          }
+        }
+      }
+    }
   }
 }

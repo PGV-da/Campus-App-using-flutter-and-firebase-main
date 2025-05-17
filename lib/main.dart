@@ -100,14 +100,14 @@ class _MainState extends State<Main> with WidgetsBindingObserver {
       switch (event) {
         case ConnectivityResult.none:
           isInternet = false;
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             dismissDirection: DismissDirection.none,
             behavior: SnackBarBehavior.fixed,
-            duration: const Duration(days: 69),
+            duration: Duration(days: 69),
             elevation: 10,
             content: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Padding(
                   padding: EdgeInsets.only(right: 10),
                   child: Icon(Icons.cloud_off_outlined, color: Colors.white),
@@ -189,8 +189,8 @@ class _MainState extends State<Main> with WidgetsBindingObserver {
             actions: [
               ElevatedButton(
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.deepPurpleAccent),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                      backgroundColor: WidgetStateProperty.all(Colors.deepPurpleAccent),
+                      shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                   onPressed: () => Navigator.of(context).pop(),
                   child: const Text("OK"))
             ],

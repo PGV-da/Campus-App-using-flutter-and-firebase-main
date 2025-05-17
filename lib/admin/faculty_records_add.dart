@@ -161,10 +161,10 @@ class _FacultyRecordsAddState extends State<FacultyRecordsAdd> {
                                   var ex = Excel.decodeBytes(file.readAsBytesSync().toList());
                                   if (ex.tables.isNotEmpty) {
                                     String sheet = ex.tables.keys.single;
-                                    if (ex.tables[sheet]!.maxCols == 5) {
+                                    if (ex.tables[sheet]!.maxRows == 5) {
                                       for (var row in ex.tables[sheet]!.rows) {
                                         if (count == 0) {
-                                          for (int i = 0; i < ex.tables[sheet]!.maxCols; i++) {
+                                          for (int i = 0; i < ex.tables[sheet]!.maxRows; i++) {
                                             if (RegExp('.*email.*', caseSensitive: false).hasMatch(row[i]!.value.toString())) {
                                               m['Email'] = i;
                                             } else if (RegExp('.*first.*', caseSensitive: false).hasMatch(row[i]!.value.toString())) {
@@ -453,8 +453,8 @@ class _FacultyRecordsAddState extends State<FacultyRecordsAdd> {
               actions: [
                 ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.indigo[300]),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                        backgroundColor: WidgetStateProperty.all(Colors.indigo[300]),
+                        shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                     onPressed: () => Navigator.of(context).pop(),
                     child: const Text("OK")),
               ],
@@ -587,14 +587,14 @@ class _FacultyRecordsAddState extends State<FacultyRecordsAdd> {
                 actions: [
                   ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.white),
-                          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                          backgroundColor: WidgetStateProperty.all(Colors.white),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                       onPressed: () => Navigator.of(context).pop(false),
                       child: Text("Cancel", style: TextStyle(color: Colors.indigo[300]))),
                   ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.white),
-                          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                          backgroundColor: WidgetStateProperty.all(Colors.white),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                       onPressed: () {
                         if (rec.currentState!.validate()) {
                           if (!records[name].containsKey('Subjects')) {
@@ -788,14 +788,14 @@ class _FacultyRecordsAddState extends State<FacultyRecordsAdd> {
               actions: [
                 ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                        backgroundColor: WidgetStateProperty.all(Colors.white),
+                        shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                     onPressed: () => Navigator.of(context).pop(),
                     child: Text("Cancel", style: TextStyle(color: Colors.indigo[300]))),
                 ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                        backgroundColor: WidgetStateProperty.all(Colors.white),
+                        shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                     onPressed: () {
                       if (rec.currentState!.validate()) {
                         if (!records.containsKey(emailcontroller.text.trim())) {

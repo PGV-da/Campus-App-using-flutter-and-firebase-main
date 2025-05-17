@@ -158,10 +158,8 @@ class _FacultySubEventState extends State<FacultySubEvent> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                    foregroundColor: Colors.black, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)), backgroundColor: Colors.white,
                     textStyle: const TextStyle(fontFamily: 'MiliBold', fontSize: 18),
-                    onPrimary: Colors.black,
-                    primary: Colors.white,
                     padding: const EdgeInsets.only(top: 12, bottom: 12, left: 15, right: 15),
                   ),
                   onPressed: () {
@@ -194,9 +192,7 @@ class _FacultySubEventState extends State<FacultySubEvent> {
                   padding: const EdgeInsets.only(top: 40),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      textStyle: const TextStyle(fontFamily: 'MuliBold', fontSize: 22),
-                      onPrimary: Colors.black,
-                      primary: Colors.white,
+                      foregroundColor: Colors.black, textStyle: const TextStyle(fontFamily: 'MuliBold', fontSize: 22), backgroundColor: Colors.white,
                       padding: const EdgeInsets.only(top: 12, bottom: 12, left: 15, right: 15),
                     ),
                     onPressed: () async {

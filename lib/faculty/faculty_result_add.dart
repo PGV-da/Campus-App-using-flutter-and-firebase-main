@@ -252,7 +252,7 @@ class _FacultyResultAddState extends State<FacultyResultAdd> {
                                           var ex = Excel.decodeBytes(file.readAsBytesSync().toList());
                                           if (ex.tables.isNotEmpty) {
                                             String sheet = ex.tables.keys.single;
-                                            if (ex.tables[sheet]!.maxCols == 2) {
+                                            if (ex.tables[sheet]!.maxRows == 2) {
                                               for (var element in ex.tables[sheet]!.rows) {
                                                 int? key = int.tryParse(element[0]!.value.toString());
                                                 double? value = double.tryParse(element[1]!.value.toString());
@@ -507,8 +507,8 @@ class _FacultyResultAddState extends State<FacultyResultAdd> {
               actions: [
                 ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.indigo[300]),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
+                        backgroundColor: WidgetStateProperty.all(Colors.indigo[300]),
+                        shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)))),
                     onPressed: () => Navigator.of(context).pop(),
                     child: const Text("OK"))
               ],
